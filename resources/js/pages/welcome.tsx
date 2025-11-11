@@ -14,13 +14,7 @@ export default function Welcome() {
 
     return (
         <>
-            <Head>
-                <link rel="preconnect" href="https://fonts.bunny.net" />
-                <link
-                    href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600"
-                    rel="stylesheet"
-                />
-            </Head>
+            <Head />
             <div className="relative flex min-h-screen flex-col items-center bg-[url('/background.png')] bg-cover bg-top pb-12">
                 <img
                     src="/element-big.svg"
