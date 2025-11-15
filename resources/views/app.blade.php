@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @class(['dark' => ($appearance ?? 'system') == 'dark'])>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" @class(['dark' => ($appearance ?? 'system') == 'dark', 'scroll-smooth' => true])>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="I'm Rezuan Kassim - freelance website developer based in Sabah servicing businesses across Malaysia. I build fast, modern & conversion-focused websites that help you attract more customers and grow your brand online.">
+
 
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script>
@@ -45,7 +47,7 @@
         @vite(['resources/js/app.tsx', "resources/js/pages/{$page['component']}.tsx"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased bg-[#0B0B0D] scroll-smooth">
+    <body class="font-sans antialiased bg-[#0B0B0D] overflow-x-hidden">
         @inertia
     </body>
 </html>

@@ -5,16 +5,49 @@ import {
     CollapsibleTrigger,
 } from '@/components/ui/collapsible';
 import { Marquee } from '@/components/ui/marquee';
-import { Head } from '@inertiajs/react';
-import { Menu, Minus, Plus, X } from 'lucide-react';
+import { Head, Link } from '@inertiajs/react';
+import { Check, Menu, Minus, Plus, X } from 'lucide-react';
 import { useState } from 'react';
+
+const schemaData = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'Rezuan Kassim Freelance Website Development',
+    url: 'https://rezuankassim.dev/',
+    logo: 'https://rezuankassim.dev/path-to-logo.png',
+    description:
+        'Freelance website developer offering services in Sabah and Malaysia – fast modern sites built for results.',
+    areaServed: {
+        '@type': 'Place',
+        address: {
+            '@type': 'PostalAddress',
+            addressRegion: 'Sabah',
+            addressCountry: 'MY',
+        },
+    },
+    serviceType: [
+        'Website Development',
+        'Web Design',
+        'Laravel Development',
+        'React Development',
+    ],
+    sameAs: ['https://www.linkedin.com/in/rezuan-kassim'],
+};
 
 export default function Welcome() {
     const [show, setShow] = useState(false);
 
     return (
         <>
-            <Head />
+            <Head title="Freelance Website Developer Sabah & Malaysia">
+                <link rel="canonical" href="https://rezuankassim.dev/" />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(schemaData),
+                    }}
+                />
+            </Head>
             <div className="relative flex min-h-screen flex-col items-center bg-[url('/background.png')] bg-cover bg-top pb-12">
                 <img
                     src="/element-big.svg"
@@ -23,22 +56,23 @@ export default function Welcome() {
 
                 <header className="relative mt-4 mb-6 w-full max-w-[350px] text-sm not-has-[nav]:hidden lg:max-w-[772px]">
                     <nav className="flex items-center justify-between rounded-full bg-[#16171B] px-2.5 py-1.5 lg:px-2">
-                        <div className="flex items-center gap-x-[7.47px]">
+                        <Link
+                            href="/"
+                            className="flex items-center gap-x-[7.47px]"
+                        >
                             <img src="/portfolio-logo.svg" />
 
                             <span className="font-kavoon text-lg text-[#FEFEFE] lg:text-[20px]">
                                 Rezuan
                             </span>
-                        </div>
+                        </Link>
 
                         <div className="hidden gap-x-6 text-sm text-[#FEFEFE] lg:flex">
-                            <a href="#">Services</a>
+                            <Link href="#pricing">Pricing</Link>
 
-                            <a href="#">Projects</a>
+                            <Link href="#projects">Projects</Link>
 
-                            <a href="#">Testimonials</a>
-
-                            <a href="#">Contact</a>
+                            <Link href="#contact">Contact</Link>
                         </div>
 
                         <div className="hidden lg:block">
@@ -74,13 +108,11 @@ export default function Welcome() {
                     {show && (
                         <div className="absolute top-0 z-50 mt-[46px] flex w-full max-w-[350px] flex-col items-center gap-8 rounded-2xl bg-[#0B0B0D] py-8 text-sm text-[#FEFEFE]">
                             <div className="flex flex-col gap-y-4 text-center">
-                                <a href="#">Services</a>
+                                <Link href="#pricing">Pricing</Link>
 
-                                <a href="#">Projects</a>
+                                <Link href="#projects">Projects</Link>
 
-                                <a href="#">Testimonials</a>
-
-                                <a href="#">Contact</a>
+                                <Link href="#contact">Contact</Link>
                             </div>
 
                             <a
@@ -138,9 +170,7 @@ export default function Welcome() {
                                 </div>
                             </div>
 
-                            <span className="text-[#FEFEFE]">
-                                Portfolio @2025
-                            </span>
+                            <span className="text-[#FEFEFE]">Rezuan @2025</span>
                         </div>
                     </div>
 
@@ -171,7 +201,7 @@ export default function Welcome() {
                                 <div className="h-full w-[88px] overflow-hidden rounded-[6px] bg-linear-[57deg] from-[#F63C0C] to-[#FE812E]">
                                     <img
                                         src="/user-closeup.png"
-                                        className="mt-[7px] h-[154px] w-[143px] object-cover"
+                                        className="mt-[-20px] h-[308px] w-[143px] object-cover object-top"
                                     />
                                 </div>
                             </div>
@@ -223,7 +253,7 @@ export default function Welcome() {
                             <div className="h-full w-[88px] overflow-hidden rounded-[6px] bg-linear-[57deg] from-[#F63C0C] to-[#FE812E]">
                                 <img
                                     src="/user-closeup.png"
-                                    className="mt-[7px] h-[154px] w-[143px] object-cover"
+                                    className="mt-[-20px] h-[308px] w-[143px] object-cover object-top"
                                 />
                             </div>
                         </div>
@@ -281,7 +311,7 @@ export default function Welcome() {
                 </div>
             </div>
 
-            <div className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
+            <section className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
                 <div className="flex flex-col gap-y-10 lg:gap-y-20">
                     <div className="flex items-center gap-x-4">
                         <div className="hidden size-5 items-center justify-center rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] lg:flex">
@@ -362,9 +392,9 @@ export default function Welcome() {
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
+            <section className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
                 <div className="flex flex-col gap-y-10 lg:gap-y-20">
                     <div className="flex items-center gap-x-4">
                         <div className="hidden size-5 items-center justify-center rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] lg:flex">
@@ -480,9 +510,12 @@ export default function Welcome() {
                         <div className="h-1 w-full bg-[#16171B]"></div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
+            <section
+                id="projects"
+                className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]"
+            >
                 <div className="flex flex-col gap-y-10 lg:gap-y-20">
                     <div className="flex items-center gap-x-4">
                         <div className="hidden size-5 items-center justify-center rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] lg:flex">
@@ -552,9 +585,12 @@ export default function Welcome() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]">
+            <section
+                id="faqs"
+                className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]"
+            >
                 <div className="flex flex-col gap-y-10 lg:gap-y-20">
                     <div className="flex items-center gap-x-4">
                         <div className="hidden size-5 items-center justify-center rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] lg:flex">
@@ -646,10 +682,9 @@ export default function Welcome() {
                         </CollapsibleTrigger>
                         <CollapsibleContent className="mt-3 text-sm text-[#A5A5A5] lg:mt-5 lg:text-base">
                             The cost of a new website varies based on its
-                            complexity, features, and design requirements.
-                            RM2,000 for a basic website without monthly
-                            maintenance. and RM1,800 for website with monthly
-                            maintenance. Contact me for a personalized quote.
+                            complexity, features, and design requirements. I
+                            offer competitive pricing tailored to your needs.
+                            Check out the pricing section below.
                         </CollapsibleContent>
                     </Collapsible>
 
@@ -675,9 +710,314 @@ export default function Welcome() {
 
                     <div className="h-px w-full bg-[#16171B]"></div>
                 </div>
-            </div>
+            </section>
 
-            <div className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[972px]">
+            <section
+                id="pricing"
+                className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[1170px]"
+            >
+                <div className="flex flex-col gap-y-10 lg:gap-y-20">
+                    <div className="flex items-center gap-x-4">
+                        <div className="hidden size-5 items-center justify-center rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] lg:flex">
+                            <Plus className="size-3 text-white" />
+                        </div>
+                        <hr className="hidden h-px flex-1 text-[#16171B] lg:block" />
+                        <span className="text-xs text-[#FEFEFE]">
+                            //PLAN & PRICING
+                        </span>
+                        <hr className="h-px flex-1 text-[#16171B]" />
+                        <span className="text-xs text-[#FEFEFE]">
+                            SIMPLE PLAN
+                        </span>
+                    </div>
+
+                    <div className="flex flex-col gap-y-4 lg:mx-auto lg:max-w-[772px] lg:gap-y-5">
+                        <span className="text-center text-4xl font-medium text-[#FEFEFE] lg:text-6xl">
+                            Business or Personal? <br /> I Have a Plan.
+                        </span>
+
+                        <p className="text-center text-balance text-[#A5A5A5] lg:mx-auto lg:max-w-[530px] lg:text-lg">
+                            Explore our clear and affordable pricing plans for
+                            website development. No hidden fees—only quality
+                            care at the right cost.
+                        </p>
+                    </div>
+                </div>
+
+                <div className="mt-16 flex flex-col gap-y-10 lg:mt-20 lg:grid lg:grid-cols-3 lg:items-stretch lg:gap-x-6">
+                    <div className="flex flex-col gap-y-8">
+                        <div className="rounded-3xl bg-[#16171B] px-6 py-9">
+                            <div className="flex flex-col gap-y-5">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-x-2.5 rounded-full border border-[#373737] px-2.5 py-1">
+                                        <div className="size-1.5 rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E]"></div>
+
+                                        <span className="text-xs">
+                                            Available for work
+                                        </span>
+                                    </div>
+
+                                    <span className="font-medium">
+                                        4-6 days
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <h3 className="font-alexandria text-[28px] leading-[1.4] font-medium">
+                                        Landing Pages
+                                    </h3>
+                                    <p className="text-sm text-[#A5A5A5]">
+                                        Perfect for small business and startups.
+                                    </p>
+                                </div>
+
+                                <div className="h-px w-full bg-[#373737]"></div>
+                            </div>
+                            <ul className="mt-9 flex flex-col gap-y-2 font-medium text-[#A5A5A5]">
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Landing Pages
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Design and Development
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Responsive Layout
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    WhatsApp Chat
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Analytics Integration
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free SSL (HTTPS)
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free 1 Year Domain
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free 1 Year Domain
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <X className="size-5 text-[#F63C0C]" />
+                                    Advanced SEO
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <X className="size-5 text-[#F63C0C]" />
+                                    Pause or Cancel Anytime
+                                </li>
+                            </ul>
+                            <div className="mt-9 flex items-center justify-between rounded-full bg-[#FEFEFE] py-1.5 pr-1.5 pl-6 text-sm text-[#16171B]">
+                                <div className="flex items-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM2,499
+                                    </span>
+                                    <span>/ Project</span>
+                                </div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between gap-x-4">
+                                <div className="h-px w-full bg-[#373737]"></div>
+                                <span>or</span>
+                                <div className="h-px w-full bg-[#373737]"></div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] px-6 py-1.5 text-sm text-[#FEFEFE]">
+                                <div className="mx-auto flex items-center justify-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM499
+                                    </span>
+                                    <span>/ month</span>
+                                </div>
+                            </div>
+                            <div className="mt-1 flex items-center justify-center">
+                                For 6 Monthly Payments
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-y-8">
+                        <div className="rounded-3xl bg-linear-[52deg] from-[#F63C0C] to-[#FE812E] px-6 py-9">
+                            <div className="flex flex-col gap-y-5">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-x-2.5 rounded-full border border-transparent bg-[#FC9766] px-2.5 py-1">
+                                        <div className="size-1.5 rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E]"></div>
+
+                                        <span className="text-xs">
+                                            Available for work
+                                        </span>
+                                    </div>
+
+                                    <span className="font-medium">
+                                        2-3 weeks
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <h3 className="font-alexandria text-[28px] leading-[1.4] font-medium">
+                                        Full Website
+                                    </h3>
+                                    <p className="text-sm text-[#CDCDCD]">
+                                        Perfect for businesses that want to
+                                        grow.
+                                    </p>
+                                </div>
+
+                                <div className="h-px w-full bg-[#CDCDCD]"></div>
+                            </div>
+                            <ul className="mt-9 flex flex-col gap-y-2 font-medium text-[#FEFEFE]">
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Landing Pages
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Design and Development
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Responsive Layout
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    WhatsApp Chat
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Analytics Integration
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free SSL (HTTPS)
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free 1 Year Domain
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Free 1 Year Domain
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Advanced SEO
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Pause or Cancel Anytime
+                                </li>
+                            </ul>
+                            <div className="mt-9 flex items-center justify-between rounded-full bg-[#FEFEFE] py-1.5 pr-1.5 pl-6 text-sm text-[#16171B]">
+                                <div className="flex items-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM5,499
+                                    </span>
+                                    <span>/ Project</span>
+                                </div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between gap-x-4">
+                                <div className="h-px w-full bg-[#CDCDCD]"></div>
+                                <span>or</span>
+                                <div className="h-px w-full bg-[#CDCDCD]"></div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between rounded-full bg-[#FC9766] px-6 py-1.5 text-sm text-[#FEFEFE]">
+                                <div className="mx-auto flex items-center justify-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM1,099
+                                    </span>
+                                    <span>/ month</span>
+                                </div>
+                            </div>
+                            <div className="mt-1 flex items-center justify-center">
+                                For 6 Monthly Payments
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col gap-y-8">
+                        <div className="rounded-3xl bg-[#16171B] px-6 py-9 lg:flex lg:h-full lg:flex-col">
+                            <div className="flex flex-col gap-y-5">
+                                <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-x-2.5 rounded-full border border-[#373737] px-2.5 py-1">
+                                        <div className="size-1.5 rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E]"></div>
+
+                                        <span className="text-xs">
+                                            Available for work
+                                        </span>
+                                    </div>
+
+                                    <span className="font-medium">
+                                        Custom deadline
+                                    </span>
+                                </div>
+
+                                <div>
+                                    <h3 className="font-alexandria text-[28px] leading-[1.4] font-medium">
+                                        Custom Website
+                                    </h3>
+                                    <p className="text-sm text-[#A5A5A5]">
+                                        Perfect for businesses with unique
+                                        needs.
+                                    </p>
+                                </div>
+
+                                <div className="h-px w-full bg-[#373737]"></div>
+                            </div>
+                            <ul className="mt-9 flex flex-col gap-y-2 font-medium text-[#A5A5A5] lg:flex-1">
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Include all features
+                                </li>
+                                <li className="flex items-center gap-x-4">
+                                    <Check className="size-5 text-[#FEFEFE]" />
+                                    Custom requirements
+                                </li>
+                            </ul>
+                            <div className="mt-9 flex items-center justify-between rounded-full bg-[#FEFEFE] py-1.5 pr-1.5 pl-6 text-sm text-[#16171B]">
+                                <div className="flex items-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM7,499
+                                    </span>
+                                    <span>/ Project</span>
+                                </div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between gap-x-4">
+                                <div className="h-px w-full bg-[#373737]"></div>
+                                <span>or</span>
+                                <div className="h-px w-full bg-[#373737]"></div>
+                            </div>
+                            <div className="mt-2 flex items-center justify-between rounded-full bg-linear-[64deg] from-[#F63C0C] to-[#FE812E] px-6 py-1.5 text-sm text-[#FEFEFE]">
+                                <div className="mx-auto flex items-center justify-center gap-x-1">
+                                    <span>From</span>
+                                    <span className="text-[42px] leading-[1.2]">
+                                        RM1,499
+                                    </span>
+                                    <span>/ month</span>
+                                </div>
+                            </div>
+                            <div className="mt-1 flex items-center justify-center">
+                                For 6 Monthly Payments
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                id="contact"
+                className="px-5 py-20 lg:mx-auto lg:w-full lg:max-w-[972px]"
+            >
                 <div className="flex flex-col gap-y-16 lg:gap-y-20">
                     <div className="flex flex-col items-center gap-y-4 text-center lg:gap-y-8">
                         <div className="flex items-center gap-x-2.5">
@@ -718,8 +1058,8 @@ export default function Welcome() {
 
                 <div className="mt-20 flex flex-col gap-y-16 lg:mt-40 lg:gap-y-20">
                     <img
-                        src="/profile.png"
-                        className="h-[400px] w-full rounded-xl object-cover object-center lg:h-[560px] lg:rounded-[20px]"
+                        src="/profile.jpeg"
+                        className="h-[400px] w-full rounded-xl object-cover object-top lg:h-[560px] lg:rounded-[20px]"
                     />
 
                     <p className="text-center text-lg text-[#A5A5A5] lg:text-[22px] lg:leading-[1.5] lg:text-pretty">
@@ -752,7 +1092,7 @@ export default function Welcome() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <footer className="flex flex-col gap-y-10 pt-12 pb-5 lg:pb-8">
                 <div className="flex items-center justify-center gap-x-1.5 font-alexandria text-[70px] leading-[1] tracking-tight lg:text-[258px]">
