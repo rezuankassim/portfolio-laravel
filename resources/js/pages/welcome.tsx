@@ -876,7 +876,7 @@ export default function Welcome() {
                             <ul className="mt-9 flex flex-col gap-y-2 font-medium text-[#FEFEFE]">
                                 <li className="flex items-center gap-x-4">
                                     <Check className="size-5 text-[#FEFEFE]" />
-                                    Landing Pages
+                                    3-5 Pages Website
                                 </li>
                                 <li className="flex items-center gap-x-4">
                                     <Check className="size-5 text-[#FEFEFE]" />
