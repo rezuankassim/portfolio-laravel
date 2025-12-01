@@ -41,3 +41,20 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+
+export interface Project {
+    slug: string;
+    name: string;
+    link: string;
+    client: string;
+    category: string;
+    duration: string;
+    budget: string;
+    summary: string[];
+    goal: string[];
+    challenge: string[];
+    images: string[];
+    features: string[];
+    results: string[];
+    [key: string]: unknown;
+}
