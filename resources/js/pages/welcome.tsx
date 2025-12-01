@@ -1,7 +1,7 @@
 import FooterSection from '@/components/footer-section';
 import { Button } from '@/components/ui/button';
 import { Marquee } from '@/components/ui/marquee';
-import { project } from '@/routes';
+import { project, projects } from '@/routes';
 import { Head, Link } from '@inertiajs/react';
 import { Check, Menu, Plus, X } from 'lucide-react';
 import { useState } from 'react';
@@ -67,7 +67,7 @@ export default function Welcome() {
                         <div className="hidden gap-x-6 text-sm text-[#FEFEFE] lg:flex">
                             <Link href="#pricing">Pricing</Link>
 
-                            <Link href="#projects">Projects</Link>
+                            <Link href={projects()}>Projects</Link>
 
                             <Link href="#contact">Contact</Link>
                         </div>
@@ -107,7 +107,7 @@ export default function Welcome() {
                             <div className="flex flex-col gap-y-4 text-center">
                                 <Link href="#pricing">Pricing</Link>
 
-                                <Link href="#projects">Projects</Link>
+                                <Link href={projects()}>Projects</Link>
 
                                 <Link href="#contact">Contact</Link>
                             </div>

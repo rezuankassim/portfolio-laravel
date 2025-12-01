@@ -1,6 +1,6 @@
 import FooterSection from '@/components/footer-section';
 import { Button } from '@/components/ui/button';
-import { home } from '@/routes';
+import { projects } from '@/routes';
 import { Project as IProject } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import { Calendar, DollarSign, FileText, Menu, User, X } from 'lucide-react';
@@ -65,7 +65,7 @@ export default function Project({ project }: { project: IProject }) {
                         <div className="hidden gap-x-6 text-sm text-[#FEFEFE] lg:flex">
                             <Link href="#pricing">Pricing</Link>
 
-                            <Link href="#projects">Projects</Link>
+                            <Link href={projects()}>Projects</Link>
 
                             <Link href="#contact">Contact</Link>
                         </div>
@@ -105,7 +105,7 @@ export default function Project({ project }: { project: IProject }) {
                             <div className="flex flex-col gap-y-4 text-center">
                                 <Link href="#pricing">Pricing</Link>
 
-                                <Link href="#projects">Projects</Link>
+                                <Link href={projects()}>Projects</Link>
 
                                 <Link href="#contact">Contact</Link>
                             </div>
@@ -166,7 +166,7 @@ export default function Project({ project }: { project: IProject }) {
                                 </a>
 
                                 <Link
-                                    href={home().url + '#projects'}
+                                    href={projects()}
                                     className="inline-flex text-[#FEFEFE] underline"
                                 >
                                     See All Projects
