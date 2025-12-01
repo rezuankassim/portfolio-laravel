@@ -1,0 +1,37 @@
+{
+    "slug": "lcd-logistics",
+    "name": "LCD Logistics Sdn Bhd",
+    "link": "https://www.lcdlogistics.com.my/",
+    "client": "LCD Logistics Sdn Bhd",
+    "category": "Web Revamp",
+    "duration": "1 week",
+    "budget": "RM2,000",
+    "summary": [
+        "LCD Logistics Sdn Bhd needed a modern and professional website to better represent their logistics and freight services. Their previous website was outdated, inconsistent, and did not align with their brand quality.",
+        "I redesigned the entire site with a clean, structured layout, improved usability, and added essential new features—resulting in a more polished and trustworthy online presence."
+    ],
+    "goal": [
+        "Modernise the company’s outdated website design",
+        "Improve user experience with cleaner navigation and consistent UI components",
+        "Introduce multilingual support (English & Chinese/Malay) for a wider customer reach",
+        "Strengthen brand credibility through a professional, responsive layout",
+        "Make the website more readable, structured, and aligned with their business values"
+    ],
+    "challenge": [
+        "The previous LCD Logistics website lacked consistency in both design and structure. Components varied from page to page, making the user experience feel fragmented and outdated. Without a unified visual identity, the site failed to reflect the professionalism of the company.",
+        "Additionally, the website did not support multiple languages, which limited its ability to communicate effectively with a wider audience in Malaysia. The client also needed the layout to stay simple while still looking modern—requiring a careful balance between usability, aesthetics, and brand alignment."
+    ],
+    "images": ["/project-1-mobile.jpg", "/project-1.jpg"],
+    "features": [
+        "Modern, fully responsive UI/UX redesign",
+        "Multilingual support for wider audience reach",
+        "Consistent design system with reusable components",
+        "Simplified navigation for easier browsing",
+        "Improved content structure with SEO-friendly formatting"
+    ],
+    "results": [
+        "The revamped website now delivers a clean, modern, and trustworthy digital experience. Consistent UI components and a unified design system greatly enhance usability and strengthen brand credibility.",
+        "The introduction of multilingual support allows LCD Logistics to reach a broader customer base and provide information more clearly to different language groups. With improved navigation and a well-structured content layout, users can now browse services and company information more smoothly.",
+        "Overall, the new website positions LCD Logistics as a more professional, reliable, and customer-focused logistics provider."
+    ]
+}
